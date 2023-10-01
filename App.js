@@ -1,20 +1,45 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {createStackNavigator } from "react-navigation-stack";
+import { createAppContainer} from "react-navigation";
+import SearchScreen from "./src/screens/SearchScreen";
+import ResultShowScreen from "./src/screens/ResultShowScreen";
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+const navigator = createStackNavigator(
+  {
+    Search: SearchScreen,
+    ResultShow : ResultShowScreen
   },
-});
+
+    {
+      initialRouteName: 'Search',
+      defaultNavigationOptions:{
+        title:'Business App'
+      }  
+    }
+
+);
+
+export default createAppContainer(navigator);
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+Yelp API
+
+Client ID
+
+JvhxnWjlcC9EDtLUpoy8JA
+API Key
+
+pJYqRzDl1j_7hkjdOxJK7DSAnzw7qWxG8PtRGuEhQ-NsBDx0GNYG1xEk8XHTYgzLhU_L2ilijcq2ObGBG8uTRnHaIhwQZV8ajj4Xhf-5Zj2N-0MdKGewpTC8U06wY3Yx
+
+
+*/
